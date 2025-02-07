@@ -69,6 +69,92 @@
           }
         ]
       }
+
+    ]
+  },
+  {
+    "version":[
+      {
+        "number": "2",
+        "views": [
+          {
+            "view": {
+              "name": "v_companies_users",
+              "tables": [
+                {
+                  "table_name": "companies_users"
+                },
+                {
+                  "table_name": "users"
+                },
+                {
+                  "table_name": "companies"
+                }
+              ],
+              "fields": {
+                "userid": "userid",
+                "username": "username",
+                "user_phone": "users.phone",
+                "active": "active",
+                "support": "support",
+                "is_admin": "is_admin",
+                "name": "name",
+                "regno": "regno",
+                "homepage": "homepage",
+                "company_phone": "companies.phone",
+                "vatno": "vatno",
+                "company_type_fkey": "company_type_fkey",
+                "companies_fkey": "companies_fkey",
+                "users_fkey": "users_fkey",
+                "company_type": "company_type"
+              },
+              "conditions": [
+                {
+                  "condition": "users.users_pkey=companies_users.users_fkey",
+                  "conditionals": "AND"
+                },
+                {
+                  "condition": "companies.companies_pkey=companies_users.companies_fkey",
+                  "conditionals": "AND"
+                },
+                {
+                  "condition": "company_type_fkey=company_type_pkey",
+                  "conditionals": "AND"
+                }
+              ]
+            }
+          },
+          {
+            "view": {
+              "name": "v_users_in_company",
+              "tables": [
+                {
+                  "table_name": "companies_users"
+                },
+                {
+                  "table_name": "users"
+                }
+              ],
+              "fields": {
+                "userid": "userid",
+                "username": "username",
+                "user_phone": "phone",
+                "active": "active",
+                "support": "support",
+                "is_admin": "is_admin",
+                "companies_fkey": "companies_fkey",
+                "users_pkey": "users_pkey"
+              },
+              "conditions": [
+                {
+                  "condition": "users.users_pkey=companies_users.users_fkey",
+                  "conditionals": ""
+                }
+              ]
+            }
+          }
+        ]
+      }
     ]
   }
 ]
