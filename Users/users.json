@@ -89,6 +89,9 @@
                 },
                 {
                   "table_name": "companies"
+                },
+                {
+                  "table_name": "company_type"
                 }
               ],
               "fields": {
