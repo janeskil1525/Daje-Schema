@@ -14,7 +14,8 @@
                 "phone": "varchar",
                 "active": "bigint",
                 "support": "bigint",
-                "is_admin": "bigint"
+                "is_admin": "bigint",
+                "workflow_fkey": "bigint"
               },
               "index": [
                 {"type": "unique", "fields": "userid"}
@@ -26,24 +27,31 @@
             "name": "company_type",
               "fields": {
                 "company_type": "varchar"
-              }
-            },
-            "index": {
-              "type": "unique",
-              "fields": "company_type"
-            },
-            "sql" : [
-              {
-                "fields":"company_type",
-                "values": "'Office Coffee'",
-                "type": "insert"
               },
-              {
-                "fields":"company_type",
-                "values":"'Recycling'",
-                "type": "insert"
-              }
-            ]
+              "index": [
+                  {
+                  "type": "unique",
+                  "fields": "company_type"
+                }
+              ],
+              "sql" : [
+                {
+                  "fields":"company_type",
+                  "values": "'Office Coffee'",
+                  "type": "insert"
+                },
+                {
+                  "fields":"company_type",
+                  "values":"'Recycling'",
+                  "type": "insert"
+                },
+                {
+                  "fields":"company_type",
+                  "values":"'Service'",
+                  "type": "insert"
+                }
+              ]
+            }
           },
           {
             "table": {
@@ -54,7 +62,8 @@
                 "homepage": "varchar",
                 "phone": "varchar",
                 "vatno": "varchar",
-                "company_type_fkey": "bigint"
+                "company_type_fkey": "bigint",
+                "workflow_fkey": "bigint"
               }
             }
           },
