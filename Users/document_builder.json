@@ -1,0 +1,20 @@
+[
+  {
+    "version":[
+      {
+        "number": "1",
+        "tables": [
+          {
+            "table": {
+              "name": "document_builder",
+              "fields": {
+                "status": "varchar",
+                "document_json": "varchar"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
